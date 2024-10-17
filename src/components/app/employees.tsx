@@ -21,7 +21,7 @@ const EmployeeForm = ({ departments, onSubmit }: Readonly<{ departments: Departm
     };
 
     return (
-        <Card title="Add Employee">
+        <Card title="Add Employee" className='flex-grow'>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <Input
                     label="Employee Name"

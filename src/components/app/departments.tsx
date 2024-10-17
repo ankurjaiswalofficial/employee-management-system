@@ -15,7 +15,7 @@ const DepartmentForm = ({ onSubmit }: Readonly<{onSubmit: (x: DepartmentInterfac
   };
 
   return (
-    <Card title="Add Department">
+    <Card title="Add Department" className='flex-grow'>
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input
           label="Department Name"

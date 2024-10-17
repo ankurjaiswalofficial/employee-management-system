@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     fetchDepartments();
     fetchEmployees();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchEmployees = async () => {
@@ -94,13 +94,14 @@ function App() {
         onDepartmentChange={(e: SelectEvent) => setDepartmentFilter(e.target.value)}
         onFilter={fetchEmployees}
       />
+      <div className="flex flex-col md:flex-row w-full gap-3">
+        <DepartmentForm onSubmit={handleAddDepartment} />
 
-      <DepartmentForm onSubmit={handleAddDepartment} />
-
-      <EmployeeForm
-        departments={departments}
-        onSubmit={handleAddEmployee}
-      />
+        <EmployeeForm
+          departments={departments}
+          onSubmit={handleAddEmployee}
+        />
+      </div>
 
       <EmployeeList employees={employees} />
     </div>
