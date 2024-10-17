@@ -86,14 +86,6 @@ function App() {
     <div className="container mx-auto p-4 space-y-6">
       <h1 className="text-2xl font-bold mb-6">Employee Management System</h1>
 
-      <EmployeeFilters
-        nameFilter={nameFilter}
-        departmentFilter={departmentFilter}
-        departments={departments}
-        onNameChange={(e: InputEvent) => setNameFilter(e.target.value)}
-        onDepartmentChange={(e: SelectEvent) => setDepartmentFilter(e.target.value)}
-        onFilter={fetchEmployees}
-      />
       <div className="flex flex-col md:flex-row w-full gap-3">
         <DepartmentForm onSubmit={handleAddDepartment} />
 
@@ -103,6 +95,14 @@ function App() {
         />
       </div>
 
+      <EmployeeFilters
+        nameFilter={nameFilter}
+        departmentFilter={departmentFilter}
+        departments={departments}
+        onNameChange={(e: InputEvent) => setNameFilter(e.target.value)}
+        onDepartmentChange={(e: SelectEvent) => setDepartmentFilter(e.target.value)}
+        onFilter={fetchEmployees}
+      />
       <EmployeeList employees={employees} />
     </div>
   );
